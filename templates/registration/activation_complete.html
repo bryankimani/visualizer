@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}
+		Your Account Is Now Activated
+{% endblock %}
+
+{% block content %}
+    <div class="page-content">
+                <h1>{% trans "Your account is now activated." %}</h1>
+                <h4>{% trans "Kindly" %}? <a href="{% url 'auth_login' %}">{% trans "Login Here" %}</a>!</h4>
+    </div>
+{% endblock %}

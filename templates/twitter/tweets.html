@@ -1,0 +1,16 @@
+    <!-- the following template tag allows this index.html template to expands(to use) the base.htmi template
+	and display its content between block content and endblock  template tag in base.html template. -->
+    {% extends 'base.html' %}
+	{% load staticfiles %}
+	{% block title %}
+		Tweets
+	{% endblock %}
+
+	{% block content %}
+	  <div class="page-content">
+        <h1>Tweets</h1>
+            {% for tweet in tweets %}
+                <li><h2>{{ tweet.text}}</h2></li>
+            {% endfor %}
+
+    {% endblock %}

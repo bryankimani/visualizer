@@ -1,0 +1,26 @@
+    <!-- the following template tag allows this index.html template to expands(to use) the base.htmi template
+	and display its content between block content and endblock  template tag in base.html template. -->
+    {% extends 'base.html' %}
+	{% load staticfiles %}
+	{% block title %}
+		Welcome to Visualizer App
+	{% endblock %}
+
+	{% block content %}
+	  <div class="page-content">
+        <h1>Welcome to Visualizer</h1>
+		<hr />
+		<h4>Visualizer is a web application that analyses online social media by mining data from social media. 
+			It analyses the sentiment how people feel about different political parties or politicians by analysing 
+			their sentiments on social media Facebook and Twitter respectively. The main aim of the app 
+			is to investigate how peoples’ feelings towards different political parties change over time after 
+			and before a major event such as Brexit or an election. It utilizes a data mining algorithm by searching 
+			for key words in people’s posts and then analyses them to produce trends using an algorithm 
+			to average out the results similar to google trends where people see the differences between each 
+			party and sentiment.
+		</h4>
+		<h2>To Get Started</h2>
+		<hr />
+				<a href="{% url 'create_account' %}" class="btn btn-primary">Create Your Account</a>
+				<a href="{% url 'auth_login' %}" class="btn btn-success">Login To Your Account</a>
+    {% endblock %}

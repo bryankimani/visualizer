@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+{% block content %}
+<div class="page-content">
+      <div class="container padding-top-30px">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 ">
+                <form action="." class="dropzone" id="myDropzone" method='POST' enctype="multipart/form-data" novalidate>
+                  {% csrf_token %}
+                  <div class="form-group">
+                      <h5><label>{% trans 'Gender' %}</label></h5>
+                      {{ form.gender }}
+                  </div>
+                  <div class="form-group">
+                      <h5><label>{% trans 'Profile Picture' %}</label></h5>
+                      {{ form.photo }}
+                  </div>
+                  <div class="form-group">
+                      <h5><label>{% trans 'Phone NO' %}</label></h5>
+                      {{ form.phone }}
+                  </div>
+                  <div class="form-group">
+                      <h5><label>{% trans 'Website URL' %}</label></h5>
+                      {{ form.website }}
+                  </div>
+                  <div class="form-group">
+                      <h5><label>{% trans 'Bio Info' %}</label></h5>
+                      {{ form.bio }}
+                  </div>
+                  <div class="form-group">
+                      <h5><label>{% trans 'Your Organization' %}</label></h5>
+                      {{ form.organization }}
+                  </div>
+                  <div class="form-group">
+                      <h5><label>{% trans 'City' %}</label></h5>
+                      {{ form.city }}
+                  </div>
+                  <div class="form-group">
+                      <h5><label>{% trans 'Country' %}</label></h5>
+                      {{ form.country }}
+                  </div>
+                    <div class="fallback">
+                        <input name="file" type="file" multiple />
+                     </div>
+                  <input type="submit" value="{% trans 'Update Profile' %}" />
+                  <input type="hidden" name="next" value="{{ next }}" />
+                </form>
+
+          </div>
+        </div>
+      </div>
+</div>
+{% endblock %}

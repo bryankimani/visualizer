@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}
+		You Are Logged Out
+{% endblock %}
+
+{% block content %}
+    <div class="page-content">
+
+            <h1>{% trans "Logged out" %}</h1>
+            <h4>{% trans "Kindly" %}? <a href="{% url 'auth_login' %}">{% trans "Login Here" %}</a></h4>
+    </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+    <!-- the following template tag allows this index.html template to expands(to use) the base.htmi template
+	and display its content between block content and endblock  template tag in base.html template. -->
+    {% extends 'base.html' %}
+	{% load staticfiles %}
+	{% block title %}
+		Posts
+	{% endblock %}
+
+	{% block content %}
+	  <div class="page-content">
+        <h1>Polititcal Parties</h1>
+         <div class="row">
+             <div class="col-sm-4">
+                 <div class="panel panel-pink">
+                    <h2>{{ labourparty.name }}</h2>
+                    <div>{{ labourparty.about }}</div>
+                    <div>
+                 </div>
+                 
+             </div>
+         </div>   
+
+    {% endblock %}

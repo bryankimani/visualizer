@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load widget_tweaks %}
+{% block title %}
+		Create Visualizer Account
+{% endblock %}
+
+{% block content %}
+<div class="page-content">
+      
+            <h1>Create Your Visualizer Account To Get Started</h1>
+            <form method="post" action="." novalidate>
+              {% csrf_token %}
+              <div class="form-group">
+                {{ form.username|add_error_class:"error-border"|attr:"autofocus: "|add_class:"form-control input-md"|attr:"placeholder: Username" }}
+                <span class="helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+                <span class="helptext">{{ form.username.errors }}</span>
+              </div>
+              <div class="form-group">
+                {{ form.email|add_error_class:"error-border"|attr:"autofocus"|add_class:"form-control input-md"|attr:"placeholder: Email Address" }}
+                <span class="helptext">{{ form.email.errors }}</span>
+              </div>
+              <div class="form-group">
+                {{ form.password1|add_error_class:"error-border"|attr:"autofocus"|add_class:"form-control input-md"|attr:"placeholder: Password" }}
+                <span class="helptext">{{ form.password1.errors }}</span>
+              </div>
+              <div class="form-group">
+                {{ form.password2|add_error_class:"error-border"|attr:"autofocus"|add_class:"form-control input-md"|attr:"placeholder: Password confirmation" }}
+                <span class="helptext">{{ form.password2.errors }}</span>
+              </div>
+              <div class="form-group">
+                {{ form.first_name|add_error_class:"error-border"|attr:"autofocus"|add_class:"form-control input-md"|attr:"placeholder: First Name" }}
+                <span class="helptext">{{ form.first_name.errors }}</span>
+              </div>
+              <div class="form-group">
+                {{ form.last_name|add_error_class:"error-border"|attr:"autofocus"|add_class:"form-control input-md"|attr:"placeholder: Last Name" }}
+                <span class="helptext">{{ form.last_name.errors }}</span>
+              </div>
+              <div class="form-group">
+                <input type="submit" class="btn btn-success" value="{% trans 'Create Your Account' %}" />
+              </div>
+            </form>
+            <hr />
+            <h4>Click <a href="{% url 'auth_login' %}">here</a> to login if you have a Visualizer Account</h4>
+</div>
+{% endblock %}
